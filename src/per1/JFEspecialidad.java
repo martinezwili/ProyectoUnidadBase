@@ -10,7 +10,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,30 +24,7 @@ public class JFEspecialidad extends javax.swing.JFrame {
      */
     public JFEspecialidad() {
         initComponents();
-       
-        /*DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new Object[]{"CODIGO", "NOMBRE", "DESCRIPCION"});
-        ObjectContainer DB = Db4o.openFile("C:\\Users\\MAWIL\\Downloads\\BD Access\\M2C\\clinica2.yap"); 
-        Especialidad mespec = new Especialidad(null, null, null);
-        
-        try{
-            
-            ObjectSet resul = DB.get(mespec);
-            Espe = DB.query(Especialidades);
-            while(resul.hasNext()){
-                System.out.println(resul.next());
-            }
-            ObjectSet resul = DB.get(mespec);
-            IList <Especialidad> cons = DB.queryByExample(Especialidad);
-            if(resul.size() == 0){
-                JOptionPane.showMessageDialog(rootPane, "No existen datos :("); 
-            }
-            else
-            {
-                for(Especialidad es : modelo){
-                    tpespecialidad = new modelo(Especialidades.)
-                }
-            }*/
+        setLocationRelativeTo(null);
     }
 
     public static void Consultar_Clientes(ObjectContainer base){
@@ -71,54 +47,78 @@ public class JFEspecialidad extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         tfcodigoespecialidad = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         tfnombreespecialidad = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tpespecialidad = new javax.swing.JTable();
-        btmodificarespecialidad = new javax.swing.JButton();
+        tfdescripcionespecialidad = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         btinsertarespecialidad = new javax.swing.JButton();
+        btmodificarespecialidad = new javax.swing.JButton();
         bteliminarespecialidad = new javax.swing.JButton();
         btsalir = new javax.swing.JButton();
-        tfdescripcionespecialidad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("ESPECIALIDAD INGRESAR / MODIFICAR / ELIMINAR");
+        jLabel1.setText("ESPECIALIDAD CREAR / MODIFICAR / ELIMINAR");
 
-        jLabel2.setText("CODIGO DE ESPECIALIDAD: EJEM. ESP-001");
+        jLabel2.setText("CODIGO DE ESPECIALIDAD: ");
 
         jLabel3.setText("NOMBRE DE ESPECIALIDAD");
 
         jLabel4.setText("DESCRIPCION DE ESPECIALIDAD");
 
-        tpespecialidad.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "CODIGO", "NOMBRE", "DESCRIPCION"
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfcodigoespecialidad)
+                                .addComponent(tfnombreespecialidad)
+                                .addComponent(tfdescripcionespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel4))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(27, 27, 27)
+                .addComponent(tfcodigoespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(tfnombreespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(tfdescripcionespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        btinsertarespecialidad.setText("CREAR");
+        btinsertarespecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btinsertarespecialidadActionPerformed(evt);
             }
-        ));
-        jScrollPane2.setViewportView(tpespecialidad);
+        });
 
         btmodificarespecialidad.setText("MODIFICAR");
         btmodificarespecialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmodificarespecialidadActionPerformed(evt);
-            }
-        });
-
-        btinsertarespecialidad.setText("INSERTAR");
-        btinsertarespecialidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btinsertarespecialidadActionPerformed(evt);
             }
         });
 
@@ -136,6 +136,33 @@ public class JFEspecialidad extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bteliminarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmodificarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btinsertarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btinsertarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btmodificarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(bteliminarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -143,64 +170,28 @@ public class JFEspecialidad extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel4))
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfcodigoespecialidad)
-                            .addComponent(tfnombreespecialidad)
-                            .addComponent(tfdescripcionespecialidad))))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btinsertarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btmodificarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bteliminarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2))
-                .addGap(34, 62, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(142, 142, 142))
+                        .addGap(108, 108, 108)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(27, 27, 27)
-                        .addComponent(tfcodigoespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfnombreespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfdescripcionespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btmodificarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btinsertarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bteliminarespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,7 +223,6 @@ public class JFEspecialidad extends javax.swing.JFrame {
                 acespecialidad.setEsp_nombre(tfnombreespecialidad.getText());
                 acespecialidad.setEsp_descripcion(tfdescripcionespecialidad.getText());
                 DB.set(acespecialidad);
-                limpiarDatos();
                 JOptionPane.showMessageDialog(rootPane, "Datos actualizados exitosamente :("); 
                 this.dispose();
                 JFMenu men = new JFMenu();
@@ -254,7 +244,6 @@ public class JFEspecialidad extends javax.swing.JFrame {
             if(Comprobar_especialidad(DB, tfcodigoespecialidad.getText()) == 0){ 
                 DB.store(espe);
                 DB.commit();
-                limpiarDatos();
                 JOptionPane.showMessageDialog(rootPane, "Datos guardados exitosamente :)");
                 this.dispose();
                 JFMenu men = new JFMenu();
@@ -285,7 +274,6 @@ public class JFEspecialidad extends javax.swing.JFrame {
             {
                 Especialidad acespecialidad = (Especialidad)resul.next();
                 DB.delete(acespecialidad);
-                limpiarDatos();
                 JOptionPane.showMessageDialog(rootPane, "Datos eliminados exitosamente :(");
                 this.dispose();
                 JFMenu men = new JFMenu();
@@ -305,41 +293,6 @@ public class JFEspecialidad extends javax.swing.JFrame {
         men.setVisible(true); 
     }//GEN-LAST:event_btsalirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFEspecialidad.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFEspecialidad.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFEspecialidad.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFEspecialidad.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFEspecialidad().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bteliminarespecialidad;
     private javax.swing.JButton btinsertarespecialidad;
@@ -350,19 +303,13 @@ public class JFEspecialidad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField tfcodigoespecialidad;
     private javax.swing.JTextField tfdescripcionespecialidad;
     private javax.swing.JTextField tfnombreespecialidad;
-    private javax.swing.JTable tpespecialidad;
     // End of variables declaration//GEN-END:variables
 
-    public void limpiarDatos(){
-        tfcodigoespecialidad.setText("");
-        tfnombreespecialidad.setText("");
-        tfdescripcionespecialidad.setText("");
-    }
-    
     public static int Comprobar_especialidad(ObjectContainer base, String esp_codigo){
         Especialidad comespe = new Especialidad(esp_codigo, null, null);
         ObjectSet resul = base.get(comespe);

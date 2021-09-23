@@ -38,6 +38,6 @@ public class Doctor extends Persona{
 
     @Override
     public String toString() {
-        return "Doctor{" + "doc_esp_codigo=" + doc_esp_codigo + ", doc_categoria=" + doc_categoria + '}';
+        return "CEDULA   " + super.getPer_cedula() + "   NOMBRE   " + super.getPer_nombre() + "   APELLIDO   " + super.getPer_apellido() + "   DIRECCION   " + super.getPer_direccion() + "   CORREO   " + super.getPer_correo() + "   TIPO DE SANGRE   " + super.getPer_tiposangre() + "   SEXO   " + super.getPer_sexo() + "   TELEFONO   " + super.getPer_telefono() + "   NACIMIENTO   " + super.getPer_nacimiento()  + "   CODIGO ESPECIALIDAD   " + doc_esp_codigo + "   CATEGORIA   " + doc_categoria;
     }
 }

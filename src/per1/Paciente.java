@@ -47,6 +47,6 @@ public class Paciente extends Persona{
 
     @Override
     public String toString() {
-        return "Paciente{" + "pac_res_cedula=" + pac_res_cedula + ", pac_peso=" + pac_peso + ", pac_estatura=" + pac_estatura + '}';
+        return "CEDULA   " + super.getPer_cedula() + "   NOMBRE   " + super.getPer_nombre() + "   APELLIDO   " + super.getPer_apellido() + "   DIRECCION   " + super.getPer_direccion() + "   CORREO   " + super.getPer_correo() + "   TIPO DE SANGRE   " + super.getPer_tiposangre() + "   SEXO   " + super.getPer_sexo() + "   TELEFONO   " + super.getPer_telefono() + "   NACIMIENTO   " + super.getPer_nacimiento()  + "   CEDULA RESPONSABLE   " + pac_res_cedula + "   PESO   " + pac_peso + "   ESTATURA   " + pac_estatura;
     }
 }

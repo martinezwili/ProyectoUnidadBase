@@ -38,6 +38,6 @@ public class Usuario extends Persona{
 
     @Override
     public String toString() {
-        return "Usuario{" + "usu_categoria=" + usu_categoria + ", usu_contrase\u00f1a=" + usu_contraseña + '}';
+        return "CEDULA   " + super.getPer_cedula() + "   NOMBRE   " + super.getPer_nombre() + "   APELLIDO   " + super.getPer_apellido() + "   DIRECCION   " + super.getPer_direccion() + "   CORREO   " + super.getPer_correo() + "   TIPO DE SANGRE   " + super.getPer_tiposangre() + "   SEXO   " + super.getPer_sexo() + "   TELEFONO   " + super.getPer_telefono() + "   NACIMIENTO   " + super.getPer_nacimiento()  + "   CATEGORIA   " + usu_categoria;
     }
 }

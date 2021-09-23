@@ -83,6 +83,6 @@ public class Reservacion {
 
     @Override
     public String toString() {
-        return "Reservacion{" + "rese_codigo=" + rese_codigo + ", rese_doc_cedula=" + rese_doc_cedula + ", rese_usu_cedula=" + rese_usu_cedula + ", rese_res_cedula=" + rese_res_cedula + ", rese_pac_cedula=" + rese_pac_cedula + ", rese_sintomas=" + rese_sintomas + ", rese_fecha_hora=" + rese_fecha_hora + '}';
+        return "CODIGO   " + rese_codigo + "   CEDULA DOCTOR   " + rese_doc_cedula + "   CEDULA USUARIO   " + rese_usu_cedula + "   CEDULA RESPONSABLE   " + rese_res_cedula + "   CEDULA PACIENTE   " + rese_pac_cedula + "   SINTOMAS   " + rese_sintomas + "   FECHA Y HORA   " + rese_fecha_hora;
     }
 }

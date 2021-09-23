@@ -12,31 +12,13 @@ import java.util.Date;
  * @author MAWIL
  */
 public class Responsable extends Persona{
-    private String res_cedula, res_per_cedula, res_relacion_familiar;
+    private String res_relacion_familiar;
 
-    public Responsable(String res_cedula, String res_per_cedula, String res_relacion_familiar, String per_cedula, String per_nombre, String per_apellido, String per_direccion, String per_correo, String per_tiposangre, String per_sexo, int per_telefono, Date per_nacimiento) {
+    public Responsable(String res_relacion_familiar, String per_cedula, String per_nombre, String per_apellido, String per_direccion, String per_correo, String per_tiposangre, String per_sexo, int per_telefono, Date per_nacimiento) {
         super(per_cedula, per_nombre, per_apellido, per_direccion, per_correo, per_tiposangre, per_sexo, per_telefono, per_nacimiento);
-        this.res_cedula = res_cedula;
-        this.res_per_cedula = res_per_cedula;
         this.res_relacion_familiar = res_relacion_familiar;
     }
-
-    public String getRes_cedula() {
-        return res_cedula;
-    }
-
-    public void setRes_cedula(String res_cedula) {
-        this.res_cedula = res_cedula;
-    }
-
-    public String getRes_per_cedula() {
-        return res_per_cedula;
-    }
-
-    public void setRes_per_cedula(String res_per_cedula) {
-        this.res_per_cedula = res_per_cedula;
-    }
-
+    
     public String getRes_relacion_familiar() {
         return res_relacion_familiar;
     }
@@ -47,6 +29,6 @@ public class Responsable extends Persona{
 
     @Override
     public String toString() {
-        return "Responsable{" + "res_cedula=" + res_cedula + ", res_per_cedula=" + res_per_cedula + ", res_relacion_familiar=" + res_relacion_familiar + '}';
+        return "CEDULA   " + super.getPer_cedula() + "   NOMBRE   " + super.getPer_nombre() + "   APELLIDO   " + super.getPer_apellido() + "   DIRECCION   " + super.getPer_direccion() + "   CORREO   " + super.getPer_correo() + "   TIPO DE SANGRE   " + super.getPer_tiposangre() + "   SEXO   " + super.getPer_sexo() + "   TELEFONO   " + super.getPer_telefono() + "   NACIMIENTO   " + super.getPer_nacimiento()  + "   RELACION   " + res_relacion_familiar;
     }
 }

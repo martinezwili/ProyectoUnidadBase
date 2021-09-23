@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author MAWIL
  */
-public class JFUsuario extends javax.swing.JFrame {
+public class JFRegistrarse extends javax.swing.JFrame {
 
     Validaciones vali = new Validaciones();
     
     /**
-     * Creates new form JFUsuario
+     * Creates new form JFRegistrarse
      */
-    public JFUsuario() {
+    public JFRegistrarse() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -38,9 +38,12 @@ public class JFUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        tfcedulausuario = new javax.swing.JTextField();
-        tfnombreusuario = new javax.swing.JTextField();
         tfapelliusuario = new javax.swing.JTextField();
+        tfnombreusuario = new javax.swing.JTextField();
+        tfcedulausuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         tfdireccionusuario = new javax.swing.JTextField();
         tfcorreousuario = new javax.swing.JTextField();
         tfsangreusuario = new javax.swing.JTextField();
@@ -49,31 +52,25 @@ public class JFUsuario extends javax.swing.JFrame {
         tfnacimientousuario = new com.toedter.calendar.JDateChooser();
         tfcategoriausuario = new javax.swing.JTextField();
         tfcontrausuario = new javax.swing.JPasswordField();
+        btusuario = new javax.swing.JButton();
+        btinsertarusuario = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        btinsertarusuario = new javax.swing.JButton();
-        btmodificarusuario = new javax.swing.JButton();
-        bteliminarusuario = new javax.swing.JButton();
-        btusuario = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("USUARIO CREAR / MODIFICAR / ELIMINAR");
+        jLabel1.setText("USUARIO REGISTRARSE");
 
-        tfcedulausuario.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfapelliusuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                tfcedulausuarioFocusLost(evt);
+                tfapelliusuarioFocusLost(evt);
             }
         });
 
@@ -83,11 +80,20 @@ public class JFUsuario extends javax.swing.JFrame {
             }
         });
 
-        tfapelliusuario.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfcedulausuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfcedulausuarioFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                tfapelliusuarioFocusLost(evt);
+                tfcedulausuarioFocusLost(evt);
             }
         });
+
+        jLabel2.setText("CEDULA:");
+
+        jLabel3.setText("NOMBRE:");
+
+        jLabel4.setText("APELLIDO:");
 
         tfsexousuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -107,6 +113,20 @@ public class JFUsuario extends javax.swing.JFrame {
             }
         });
 
+        btusuario.setText("SALIR");
+        btusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btusuarioActionPerformed(evt);
+            }
+        });
+
+        btinsertarusuario.setText("REGISTRARSE");
+        btinsertarusuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btinsertarusuarioActionPerformed(evt);
+            }
+        });
+
         jLabel12.setText("CONTRASEÑA:");
 
         jLabel11.setText("CATEGORIA:");
@@ -119,88 +139,86 @@ public class JFUsuario extends javax.swing.JFrame {
 
         jLabel7.setText("TIPO DE SANGRE:");
 
-        jLabel5.setText("DIRECCION:");
-
         jLabel6.setText("CORREO:");
 
-        jLabel4.setText("APELLIDO:");
-
-        jLabel2.setText("CEDULA:");
-
-        jLabel3.setText("NOMBRE:");
+        jLabel5.setText("DIRECCION:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfcontrausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfsangreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfcorreousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfapelliusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfdireccionusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfsexousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(tftelefonousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfnacimientousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfcategoriausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfnombreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfsangreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfcedulausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                                .addComponent(tfcorreousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfdireccionusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfsexousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(tftelefonousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfnacimientousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfcategoriausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfcontrausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(59, 59, 59)
+                            .addComponent(btinsertarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
+                            .addComponent(btusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfnombreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfcedulausuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfapelliusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(tfcedulausuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfcedulausuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfnombreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfapelliusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfdireccionusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -212,7 +230,7 @@ public class JFUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfsangreusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfsexousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
@@ -232,62 +250,11 @@ public class JFUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(tfcontrausuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
-        );
-
-        btinsertarusuario.setText("CREAR");
-        btinsertarusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btinsertarusuarioActionPerformed(evt);
-            }
-        });
-
-        btmodificarusuario.setText("MODIFICAR");
-        btmodificarusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btmodificarusuarioActionPerformed(evt);
-            }
-        });
-
-        bteliminarusuario.setText("ELIMINAR");
-        bteliminarusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bteliminarusuarioActionPerformed(evt);
-            }
-        });
-
-        btusuario.setText("SALIR");
-        btusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btusuarioActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bteliminarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btmodificarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btinsertarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(btinsertarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btmodificarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(bteliminarusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(btusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btusuario)
+                    .addComponent(btinsertarusuario))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -297,80 +264,40 @@ public class JFUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel1)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(13, 13, 13)
                 .addComponent(jLabel1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btmodificarusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmodificarusuarioActionPerformed
-        // TODO add your handling code here:
-        ObjectContainer DB = Db4o.openFile("C:\\Users\\MAWIL\\Downloads\\BD Access\\M2C\\clinica2.yap");
-        Usuario usu = new Usuario(null, null, tfcedulausuario.getText(), null, null, null, null, null, null, 0, null);
-        try{
-            ObjectSet resul = DB.get(usu);
-            if(resul.size() == 0){
-                JOptionPane.showMessageDialog(rootPane, "No existen datos :(");
-            }
-            else
-            {
-                int telefono = Integer.parseInt(tftelefonousuario.getText());
-                Usuario musu = (Usuario)resul.next();
-                musu.setPer_apellido(tfapelliusuario.getText());
-                musu.setPer_cedula(tfcedulausuario.getText());
-                musu.setPer_correo(tfcorreousuario.getText());
-                musu.setPer_direccion(tfdireccionusuario.getText());
-                musu.setPer_nombre(tfnombreusuario.getText());
-                musu.setPer_sexo(tfsexousuario.getText());
-                musu.setPer_tiposangre(tfsangreusuario.getText());
-                musu.setPer_nacimiento(tfnacimientousuario.getDate());
-                musu.setUsu_categoria(tfcategoriausuario.getText());
-                musu.setUsu_contraseña(tfcontrausuario.getText());
-                musu.setPer_telefono(telefono);
-                DB.set(musu);
-                JOptionPane.showMessageDialog(rootPane, "Datos actualizados exitosamente :(");
-                this.dispose();
-                JFMenu men = new JFMenu();
-                men.setVisible(true); 
-            }
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(rootPane, "Datos no se actualizaron exitosamente :(");
-        }finally{
-            DB.close();
-        }
-    }//GEN-LAST:event_btmodificarusuarioActionPerformed
 
     private void btinsertarusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btinsertarusuarioActionPerformed
         // TODO add your handling code here:
@@ -383,8 +310,8 @@ public class JFUsuario extends javax.swing.JFrame {
                 DB.commit();
                 JOptionPane.showMessageDialog(rootPane, "Datos guardados exitosamente :)");
                 this.dispose();
-            JFMenu men = new JFMenu();
-            men.setVisible(true); 
+                JFLogin log = new JFLogin();
+                log.setVisible(true);
             }
             else
             {
@@ -397,44 +324,15 @@ public class JFUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btinsertarusuarioActionPerformed
 
-    private void bteliminarusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bteliminarusuarioActionPerformed
-        // TODO add your handling code here:
-        ObjectContainer DB = Db4o.openFile("C:\\Users\\MAWIL\\Downloads\\BD Access\\M2C\\clinica2.yap");
-        Usuario usu = new Usuario(null, null, tfcedulausuario.getText(), null, null, null, null, null, null, 0, null);
-        try{
-            ObjectSet resul = DB.get(usu);
-
-            if(resul.size() == 0){
-                JOptionPane.showMessageDialog(rootPane, "No existen datos :(");
-            }
-            else
-            {
-                Usuario eusu = (Usuario)resul.next();
-                DB.delete(eusu);
-                JOptionPane.showMessageDialog(rootPane, "Datos eliminados exitosamente :(");
-                this.dispose();
-                JFMenu men = new JFMenu();
-                men.setVisible(true); 
-            }
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(rootPane, "Datos no se eliminaros exitosamente :(");
-        }finally{
-            DB.close();
-        }
-    }//GEN-LAST:event_bteliminarusuarioActionPerformed
-
     private void btusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btusuarioActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        JFMenu men = new JFMenu();
-        men.setVisible(true); 
+        JFLogin log = new JFLogin();
+        log.setVisible(true);
     }//GEN-LAST:event_btusuarioActionPerformed
 
     private void tfcedulausuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfcedulausuarioFocusLost
         // TODO add your handling code here:
-        if(vali.validaCedulaoTelefono(tfcedulausuario.getText()) == false){
-            JOptionPane.showMessageDialog(rootPane, "Verifique la cedula");
-        }
     }//GEN-LAST:event_tfcedulausuarioFocusLost
 
     private void tfnombreusuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfnombreusuarioFocusLost
@@ -472,10 +370,15 @@ public class JFUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tfcontrausuarioFocusLost
 
+    private void tfcedulausuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfcedulausuarioFocusGained
+        // TODO add your handling code here:
+        if(vali.validaCedulaoTelefono(tfcedulausuario.getText()) == false){
+            JOptionPane.showMessageDialog(rootPane, "Verifique la cedula");
+        }
+    }//GEN-LAST:event_tfcedulausuarioFocusGained
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bteliminarusuario;
     private javax.swing.JButton btinsertarusuario;
-    private javax.swing.JButton btmodificarusuario;
     private javax.swing.JButton btusuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -491,7 +394,6 @@ public class JFUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField tfapelliusuario;
     private javax.swing.JTextField tfcategoriausuario;
     private javax.swing.JTextField tfcedulausuario;
@@ -509,5 +411,5 @@ public class JFUsuario extends javax.swing.JFrame {
         Usuario usu = new Usuario(null, null, per_cedula, null, null, null, null, null, null, 0, null);
         ObjectSet resul = base.get(usu);
         return resul.size();
-    }    
+    }
 }
